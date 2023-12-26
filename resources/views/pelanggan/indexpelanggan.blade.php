@@ -16,19 +16,20 @@ Data Pelanggan
                 <th scope="col">Nama Lengkap</th>
                 <th scope="col">No Hp</th>
                 <th scope="col">Alamat</th>
+                <th scope="col">Aksi</th>
             </tr>
         </thead>
 
         <tbody>
             @forelse ($profile as $key => $value)
             <tr>
-                <th scope="row">{{$key + 1}}></th>
+                <th scope="row">{{$key + 1}}</th>
                 <td>{{$value->nama_lengkap}}</td>
                 <td>{{ $value->no_hp}}</td>
                 <td>{{ $value->alamat}}</td>
                 <td>
-                    <a href="/pelanggan/{{ $value->id}}" class="btn btn-info">Detail</a>
-                    <a href="/pelanggan/{{ $value->id}}/edit" class="btn btn-primary">Edit</a>
+                    <a href="/pelanggan/{{ $value->id}}" class="btn btn-info" >Detail</a>
+                   <a href="/pelanggan/{{ $value->id}}/edit" class="btn btn-success" > Edit </a>
                     <form action="/pelanggan/{{ $value->id}}" method="POST">
                         @csrf
                         @method('DELETE')

@@ -13,6 +13,7 @@
 
   @include('includes.style')
 
+
 </head>
 
 <body id="page-top">
@@ -94,5 +95,5 @@
     @include('includes.script')
 
 </body>
-
+  @include('sweetalert::alert')
 </html>
