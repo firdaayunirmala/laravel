@@ -39,5 +39,11 @@ class PelangganController extends Controller
             'alamat' => $request->alamat,
         ]);
 
+        Alert::success('Success', 'Data Berhasil');
         return redirect('/pelanggan'); }
+
+        public function show($id){
+            $profile = DB::table('profile')->find($id);
+            return view('pelanggan.detailpelanggan', compact('profile'));
+        }
 }
