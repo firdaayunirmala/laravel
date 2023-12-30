@@ -27,24 +27,21 @@ Data Pelanggan
                 <td>{{$value->nama_lengkap}}</td>
                 <td>{{ $value->no_hp}}</td>
                 <td>{{ $value->alamat}}</td>
-                <td>
-                    <a href="/pelanggan/{{ $value->id}}" class="btn btn-info" >Detail</a>
-                   <a href="/pelanggan/{{ $value->id}}/edit" class="btn btn-success" > Edit </a>
-                    <form action="/pelanggan/{{ $value->id}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger my-1" value="Delete">
-                    </form>
+                <td class="d-flex p-2">
+                    <a href="/pelanggan/{{$value->id}}" class="btn btn-info" m-1 >Show </a> 
+                    <a href="/pelanggan/{{$value->id}}/edit" class="btn btn-primary" m-1 >Edit</a>
+                    <a href="/pelanggan/ {{$value->id }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
                 </td>
-            </tr>
-            {{--tidak ada data  --}}
-        </tbody>
-            @empty
-            <tr colspan="6">
-                <td>No data</td>
-            </tr>
-            @endforelse
-    </table>
+</div>
+</tr>
+{{--tidak ada data  --}}
+</tbody>
+@empty
+<tr colspan="6">
+    <td>No data</td>
+</tr>
+@endforelse
+</table>
 </div>
 @endsection
 

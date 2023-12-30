@@ -36,7 +36,9 @@ Route::get('/pelanggan', [PelangganController::class,'index']); //untuk menampil
 Route::get('/tambahpelanggan', [PelangganController::class,'tambahpelanggan']); // untuk menampilkan tambah data 
 Route::post('/pelanggan', [PelangganController::class,'pelanggan']); // untuk menyimpan data baru 
 Route::get('/pelanggan/{pelanggan_id}',[PelangganController::class, 'show']); // untuk menampilkan data berdasarkan id tertentu
-
+Route::get('/pelanggan/{pelanggan_id}/edit',[PelangganController::class, 'edit']); // untuk mengedit data berdasarkan id tertentu
+Route::put('/pelanggan/{pelanggan_id}',[PelangganController::class, 'update']); // untuk mengupdate data berdasarkan id tertentu
+Route::delete('/pelanggan/{pelanggan_id}',[PelangganController::class, 'destroy']); // untuk mengupdate data berdasarkan id tertentu
 
 
 
