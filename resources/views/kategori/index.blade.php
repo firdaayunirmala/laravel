@@ -1,15 +1,13 @@
 @extends('layouts.admin')
 
 @section('judul')
-Data Pelanggan
+Data Kategori
 @endsection
 <!-- Page Heading -->
-
 @section('tabel')
-
 <div class="p-3">
     {{-- Kelola Kategori --}}
-    <a href="/tambahpelanggan" class="btn btn-primary my-3">Tambah Kategori</a>
+    <a href="/kategori/create" class="btn btn-primary my-3">Tambah Kategori</a>
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -22,7 +20,7 @@ Data Pelanggan
             @forelse ($kategori as $key => $value)
             <tr>
                 <th scope="row">{{$key + 1}}</th>
-                <td>{{$value->nama}}</td>
+                <td>{{$value->nama_kategori}}</td>
                 <td class="mr-3">
                     <a href="/kategori/{{$value->id}}" class="btn btn-info">Detail </a>
                     <a href="/kategori/{{$value->id}}/edit" class="btn btn-success">Edit</a>
