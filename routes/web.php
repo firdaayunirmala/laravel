@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HitungController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +41,8 @@ Route::get('/pelanggan/{pelanggan_id}/edit',[PelangganController::class, 'edit']
 Route::put('/pelanggan/{pelanggan_id}',[PelangganController::class, 'update']); // untuk mengupdate data berdasarkan id tertentu
 Route::delete('/pelanggan/{pelanggan_id}',[PelangganController::class, 'destroy']); // untuk mengupdate data berdasarkan id tertentu
 
-
+//route kategori
+Route::resource('kategori', KategoriController::class);
 
 
 // Route::get('/pendataan', function () {

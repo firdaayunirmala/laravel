@@ -30,6 +30,8 @@
   </div>
 
   <div class="p-3">
+              <a href="/pelanggan" class="btn btn-success my-3">Kembali</a>
+
   <button type="submit" class="btn btn-primary ">Submit</button>
   </div>
   

@@ -8,7 +8,11 @@ Data Pelanggan
 @section('tabel')
 
 <div class="p-3">
-    <a href="/tambahpelanggan" class="btn btn-primary my-3">Tambah Data Pelanggan</a>
+{{-- Kelola Profile Pelanggan --}}
+    <a href="/tambahpelanggan" class="btn btn-primary my-3">Tambah Data Profile Pelanggan</a> 
+    {{-- Kelola user / Pengguna Pelanggan --}}
+    <a href="/userpelanggan" class="btn btn-warning my-3">Data Pelanggan</a> 
+
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -27,9 +31,9 @@ Data Pelanggan
                 <td>{{$value->nama_lengkap}}</td>
                 <td>{{ $value->no_hp}}</td>
                 <td>{{ $value->alamat}}</td>
-                <td class="d-flex p-2">
-                    <a href="/pelanggan/{{$value->id}}" class="btn btn-info" m-1 >Show </a> 
-                    <a href="/pelanggan/{{$value->id}}/edit" class="btn btn-primary" m-1 >Edit</a>
+                <td class="mr-3">
+                    <a href="/pelanggan/{{$value->id}}" class="btn btn-info" >Show </a> 
+                    <a href="/pelanggan/{{$value->id}}/edit" class="btn btn-success">Edit</a>
                     <a href="/pelanggan/ {{$value->id }}" class="btn btn-danger" data-confirm-delete="true">Delete</a>
                 </td>
 </div>
