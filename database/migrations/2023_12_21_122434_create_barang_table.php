@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('harga_brg');
             $table->integer('stock_brg');
             $table->string('deskripsi_brg');
+            $table->string('gambar_brg');
             $table->foreignId('kategori_id')->references('id')->on('kategori')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

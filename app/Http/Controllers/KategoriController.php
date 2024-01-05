@@ -16,6 +16,11 @@ class KategoriController extends Controller
         $kategori = Kategori::all();
 
         return view('kategori.index', ['kategori' => $kategori]);
+          
+        $title = 'Peringatan !';
+        $text = "Apakah anda yakin ingin menghapus ?";
+        confirmDelete($title, $text);
+
     }
 
     /**
@@ -63,7 +68,8 @@ class KategoriController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $kategori = Kategori::find($id);
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
@@ -71,14 +77,30 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required'
+        ]);
+
+        $kategori = Kategori::find($id);
+
+        $kategori->nama_kategori = $request->input('nama');
+        $kategori->update();
+
+        Alert::success('Success', 'Data Berhasil');
+
+        return redirect('/kategori');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        $kategori->delete();
+
+        Alert::success('Success', 'Data Berhasil di Hapus');
+
+        return redirect('/kategori');
     }
 }
