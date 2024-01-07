@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HitungController;
 use App\Http\Controllers\KategoriController;
@@ -44,6 +45,8 @@ Route::delete('/pelanggan/{pelanggan_id}',[PelangganController::class, 'destroy'
 //route kategori
 Route::resource('kategori', KategoriController::class);
 
+//route barang
+Route::resource('barang', BarangController::class);
 
 // Route::get('/pendataan', function () {
 //     return view('pendataan');
