@@ -29,7 +29,9 @@ Data Barang
                 <td>{{$value->harga_brg}}</td>
                 <td>{{$value->stock_brg}}</td>
                 <td>{{$value->deskripsi_brg}}</td>
-                <td>{{$value->gambar_brg}}</td>
+                <td>
+                <img src="/uploads/{{$value->gambar_brg}}" width="100px"/>
+                </td>
                 <td>{{$value->kategori_id}}</td>
                 <td>
                     <a href="/barang/{{$value->id}}" class="btn btn-info sm" class="mr-3">Detail </a>

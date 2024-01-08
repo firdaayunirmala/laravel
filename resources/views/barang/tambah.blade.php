@@ -3,17 +3,17 @@
 @section('judul', 'Tambah barang')
 
 @section('content')
-<form action="/barang" method="POST">
+<form action="/barang" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="p-3">
         <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Kategori</label><br>
-                    <select id="inputKategori" required class="form-control">
+                    <select id="inputKategori" required class="form-control" name="kategori">
                         <option selected>Pilih Kategori</option>
                        @foreach($kategori as $kategori) 
-                       <option value='{{ $kategori->id }}'>{{ $kategori->nama_kategori }}</option> 
+                       <option value='{{ $kategori->id }}'>{{ $kategori->nama_kategori }} </option> 
                        @endforeach
 
                     </select>

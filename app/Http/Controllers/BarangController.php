@@ -34,30 +34,32 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
+       
         $request->validate([
-            'nama_brg' => 'required',
-            'harga_brg' => 'required',
-            'stock_brg' => 'required',
-            'deskripsi_brg' => 'required',
-            'gambar_brg' => 'required|mimes:jpg,jpeg,png|max:2048',
-            'kategori_id' => 'required|interger',
+            'nama' => 'required',
+            'harga' => 'required',
+            'stock' => 'required',
+            'deskripsi' => 'required',
+            'filename' => 'required',
+            'kategori' => 'required',
         ]);
-
-        $imageName = time().'.'.$request->gambar_brg->extension();  
+      
+        $imageName = time().'.'.$request->filename->extension();  // test uploadnya coba
          
-        $request->gambar_brg->move(public_path('uploads'), $imageName);
-
+        $request->filename->move(public_path('uploads'), $imageName);
+// test upload gambar coba
         $barang = new Barang;
 
-        $barang->nama_brg = $request->input('title');
+        $barang->nama_brg = $request->input('nama');
         $barang->harga_brg = $request->input('harga');
         $barang->stock_brg = $request->input('stock');
         $barang->deskripsi_brg = $request->input('deskripsi');
-        $barang->kategori_id = $request->input('category_id');
-        $barang->gambar_brg = $imageName;
+        $barang->kategori_id = $request->input('kategori');
+        $barang->gambar_brg = $imageName ; //test dulu
 
         $barang->save();
 
+        
         Alert::success('Success', 'Data Berhasil');
         return redirect('/barang'); 
     }
