@@ -44,10 +44,10 @@ class BarangController extends Controller
             'kategori' => 'required',
         ]);
       
-        $imageName = time().'.'.$request->filename->extension();  // test uploadnya coba
+        $imageName = time().'.'.$request->filename->extension();  
          
         $request->filename->move(public_path('uploads'), $imageName);
-// test upload gambar coba
+
         $barang = new Barang;
 
         $barang->nama_brg = $request->input('nama');
@@ -59,7 +59,6 @@ class BarangController extends Controller
 
         $barang->save();
 
-        
         Alert::success('Success', 'Data Berhasil');
         return redirect('/barang'); 
     }
