@@ -32,7 +32,7 @@ Data Barang
                 <td>
                 <img src="/uploads/{{$value->gambar_brg}}" width="100px"/>
                 </td>
-                <td>{{$value->kategori_id}}</td>
+                <td>{{$value->kategori->nama_kategori}}</td>
                 <td>
                     <a href="/barang/{{$value->id}}" class="btn btn-info sm" class="mr-3">Detail </a>
                     <a href="/barang/{{$value->id}}/edit" class="btn btn-success sm">Edit</a>
