@@ -12,4 +12,8 @@ class HitungController extends Controller
         $hasil = $bil1+$bil2;
         return view('hitung', ['hasiljumlah' =>$hasil]);
     }
+
+    public function index(){
+       return view('pelanggan');
+    }
 }

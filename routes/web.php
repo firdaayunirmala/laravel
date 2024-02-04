@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BerhitungController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HitungController;
 use App\Http\Controllers\KategoriController;
@@ -31,6 +32,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/hitung', [BerhitungController::class, 'hitung']);
+
+Route::get('/dashboard',[PelangganController::class, 'index']); 
+
 Route::get('/dashboard', [DashboardController::class,'index']);
 
 //route pelanggan
@@ -48,11 +53,11 @@ Route::resource('kategori', KategoriController::class);
 //route barang
 Route::resource('barang', BarangController::class);
 
-// Route::get('/pendataan', function () {
-//     return view('pendataan');
-// });
+Route::get('/pendataan', function () {
+    return view('pendataan');
+});
 
-// Route::get('/', [HitungController::class, 'hitung']);
+// Route::get('/hitung2', [HitungController::class, 'hitung']);
 
 Route::get('/daftar', [TestController::class, 'daftar']);
 Route::post('/kirim', [TestController::class, 'kirim']);

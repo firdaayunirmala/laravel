@@ -14,7 +14,6 @@ class PelangganController extends Controller
     {
         //mengambil data dari tabel profile
         $profile = DB::table('profile')->get();
-
         
         $title = 'Peringatan !';
         $text = "Apakah anda yakin ingin menghapus ?";

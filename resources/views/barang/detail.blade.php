@@ -1,20 +1,25 @@
 @extends('layouts.admin')
 
 @section('judul')
-  Detail Data Kategori
+  Detail Data Barang
 @endsection
 
 @section('content')
 
 <div class="p-3">
-<div class="card" style="width: 24rem;" >
+<div class="card" >
   <div class="card-body ">
-    <h5 class="card-title">Detail Data Kategori ke {{$kategori->id}}</h5>
-   <h2>{{$kategori->nama_kategori}}</h2>
+    <h5 class="card-title">Detail Data Barang ke {{$barang->id}}</h5>
+   <h2>Nama Barang : {{$barang->nama_brg}}</h2>
+   <h2>Harga Barang :{{$barang->harga_brg}}</h2>
+   <h2>Stock Barang :{{$barang->stock_brg}}</h2>
+   <h2>Deskripsi Barang : {{$barang->deskripsi_brg}}</h2>
+   <h2>Gambar Barang : <img src="/uploads/{{$barang->gambar_brg}}" width="100px"/> </h2>
+   <h2>Kategori Barang : {{$barang->kategori->nama_kategori}}</h2>
   </div>
 </div>
 
-<a href="/kategori" class="btn btn-primary my-3">Kembali</a>
+<a href="/barang" class="btn btn-primary my-3">Kembali</a>
 </div>
 
 @endsection
