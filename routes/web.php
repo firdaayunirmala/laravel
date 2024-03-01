@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 
 // Route::get('/user/{id}', function ($id) {
 //     return 'SMK TELKOM PURWOKERTO ' .$id;
@@ -62,3 +63,11 @@ Route::get('/pendataan', function () {
 Route::get('/daftar', [TestController::class, 'daftar']);
 Route::post('/kirim', [TestController::class, 'kirim']);
 
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
