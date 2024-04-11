@@ -57,7 +57,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-     @include('includes.footer')
+      @include('includes.footer')
             <!-- End of Footer -->
 
         </div>

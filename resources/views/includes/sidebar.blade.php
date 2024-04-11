@@ -23,7 +23,7 @@
              <li class="nav-item active">
                 <a class="nav-link" href="/pelanggan">
                     <i class="fas fa-fw fa-users"></i>
-                    <span>Pelanggan</span></a>
+                    <span>Profile Pelanggan</span></a>
             </li>
 
            <!-- Divider -->

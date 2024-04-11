@@ -63,11 +63,16 @@ Route::get('/pendataan', function () {
 Route::get('/daftar', [TestController::class, 'daftar']);
 Route::post('/kirim', [TestController::class, 'kirim']);
 
+// route user admin
+Route::get('/useradmin', [AdminController::class,'index']);
 
-// Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+

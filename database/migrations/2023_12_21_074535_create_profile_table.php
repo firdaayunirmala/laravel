@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('no_hp');
             $table->string('alamat');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('judul')
-Data Pelanggan
+Data Profile Pelanggan
 @endsection
 <!-- Page Heading -->
 
@@ -11,7 +11,7 @@ Data Pelanggan
 {{-- Kelola Profile Pelanggan --}}
     <a href="/tambahpelanggan" class="btn btn-primary my-3">Tambah Data Profile Pelanggan</a> 
     {{-- Kelola user / Pengguna Pelanggan --}}
-    <a href="/userpelanggan" class="btn btn-warning my-3">Data Pelanggan</a> 
+    {{-- <a href="/userpelanggan" class="btn btn-warning my-3">Data User</a>  --}}
 
     <table id="example1" class="table table-bordered table-striped">
         <thead>
