@@ -19,34 +19,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 
 // Route::get('/user/{id}', function ($id) {
-//     return 'SMK TELKOM PURWOKERTO ' .$id;
-// });
-
-// Route::get('/user/{name?}', function ($name = 'firda') {
-//     return $name;
-// });
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Route::get('/hitung', [BerhitungController::class, 'hitung']);
-
-Route::get('/dashboard',[PelangganController::class, 'index']); 
-
-Route::get('/dashboard', [DashboardController::class,'index']);
-
-//route pelanggan
-Route::get('/pelanggan', [PelangganController::class,'index']); //untuk menampilkan seluruh data
-Route::get('/tambahpelanggan', [PelangganController::class,'tambahpelanggan']); // untuk menampilkan tambah data 
-Route::post('/pelanggan', [PelangganController::class,'pelanggan']); // untuk menyimpan data baru 
-Route::get('/pelanggan/{pelanggan_id}',[PelangganController::class, 'show']); // untuk menampilkan data berdasarkan id tertentu
-Route::get('/pelanggan/{pelanggan_id}/edit',[PelangganController::class, 'edit']); // untuk mengedit data berdasarkan id tertentu
-Route::put('/pelanggan/{pelanggan_id}',[PelangganController::class, 'update']); // untuk mengupdate data berdasarkan id tertentu
-Route::delete('/pelanggan/{pelanggan_id}',[PelangganController::class, 'destroy']); // untuk mengupdate data berdasarkan id tertentu
+    //     return 'SMK TELKOM PURWOKERTO ' .$id;
+    // });
+    
+    // Route::get('/user/{name?}', function ($name = 'firda') {
+        //     return $name;
+        // });
+        
+        Route::get('/', function () {
+            return view('welcome');
+        });
+        
+        // Route::get('/hitung', [BerhitungController::class, 'hitung']);
+        
+        
 
 //route kategori
 Route::resource('kategori', KategoriController::class);
@@ -54,6 +42,8 @@ Route::resource('kategori', KategoriController::class);
 //route barang
 Route::resource('barang', BarangController::class);
 
+//route dashboard
+Route::get('/dashboard', [DashboardController::class,'index']);
 Route::get('/pendataan', function () {
     return view('pendataan');
 });
@@ -63,16 +53,21 @@ Route::get('/pendataan', function () {
 Route::get('/daftar', [TestController::class, 'daftar']);
 Route::post('/kirim', [TestController::class, 'kirim']);
 
-// route user admin
-Route::get('/useradmin', [AdminController::class,'index']);
-
+Route::middleware(['auth'])->group(function () {
+   //route pelanggan
+Route::get('/pelanggan', [PelangganController::class,'index']); //untuk menampilkan seluruh data
+Route::get('/tambahpelanggan', [PelangganController::class,'tambahpelanggan']); // untuk menampilkan tambah data 
+Route::post('/pelanggan', [PelangganController::class,'pelanggan']); // untuk menyimpan data baru 
+Route::get('/pelanggan/{pelanggan_id}',[PelangganController::class, 'show']); // untuk menampilkan data berdasarkan id tertentu
+Route::get('/pelanggan/{pelanggan_id}/edit',[PelangganController::class, 'edit']); // untuk mengedit data berdasarkan id tertentu
+Route::put('/pelanggan/{pelanggan_id}',[PelangganController::class, 'update']); // untuk mengupdate data berdasarkan id tertentu
+Route::delete('/pelanggan/{pelanggan_id}',[PelangganController::class, 'destroy']); // untuk mengupdate data berdasarkan id tertentu
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-// Auth::routes();
 

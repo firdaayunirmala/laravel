@@ -55,4 +55,22 @@
                     <i class="fas fa-fw fa-credit-card"></i>
                     <span>Transaksi</span></a>
             </li>
+
+            @auth
+            <li class="nav-item bg-danger">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Logout</span></a>
+            </li>
+            @endauth
+
+            @guest
+            <li class="nav-item bg-success">
+                <a class="nav-link" href="/login">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Login</span></a>
+            </li>
+            @endguest
+         
+           
         </ul>

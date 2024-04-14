@@ -94,18 +94,10 @@
                  </a>
                   
                 </div>
-
          
              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                  @csrf
              </form>
-
-             {{-- itu copi dari mana ?
-             dari kodingan saya kak 
-             referensinya ?
-             bisa diambil dari logout bawaan laravel di halaman auth/
-
-             --}} 
 
             </div>
         </div>
